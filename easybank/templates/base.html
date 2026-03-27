@@ -14,15 +14,17 @@
 <body>
 {% include 'nav.html' %}
 
-  <main style="padding: 0px 100px 0px 100px">
-    {% block page_content %}
-    {% endblock %}
-  </main>
+  <div class="content-wrapper">
+    <main style="padding: 0px 100px 0px 100px">
+      {% block page_content %}
+      {% endblock %}
+    </main>
 
-  <main class="main-home" style="padding: 0; margin: 0;" >
-    {% block home_content %}
-    {% endblock %}
-  </main>
+    <main class="main-home" style="padding: 0; margin: 0;" >
+      {% block home_content %}
+      {% endblock %}
+    </main>
+  </div>
 
 
   <footer class="bg-dark py-3">
