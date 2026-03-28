@@ -85,8 +85,15 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
+  .content-wrapper {
+    flex-grow: 0;
+  }
   .carousel-inner {
-    height: 50vh;
+    height: 100vh;
+  }
+  .carousel-item img {
+    height: 100vh;
+    object-fit: cover;
   }
   .carousel-caption {
     top: 50% !important;
