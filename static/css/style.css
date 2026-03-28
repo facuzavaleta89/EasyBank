@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -8,7 +8,7 @@ body {
 }
 
 .content-wrapper {
-  flex: 1 0 auto;
+  flex-grow: 1;
 }
 
 .carousel-caption {
@@ -84,3 +84,25 @@ footer a:hover {
   transition: 0.5s;
 }
 
+@media (max-width: 768px) {
+  .carousel-inner {
+    height: 50vh;
+  }
+  .carousel-caption {
+    top: 50% !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: translateY(-50%) !important;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .carousel-caption .display-1 {
+    font-size: 2rem !important;
+  }
+  .carousel-caption div {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% block main_container_class %}{% endblock %}
 {% block home_content %}
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -11,7 +12,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="{% static 'img/img1.jpg' %}" class="d-block w-100" alt="Imagen 1">
-      <div class="carousel-caption d-none d-md-block text-start">
+      <div class="carousel-caption text-start">
         <div class="col-md-6"  style="margin-left: -75px;">
           <a class="display-1" href="{% url 'bankaccounts_index' %}">Manage your Bank Accounts</a>
         </div>
@@ -19,7 +20,7 @@
     </div>
     <div class="carousel-item">
       <img src="{% static 'img/img2.jpg' %}" class="d-block w-100" alt="Imagen 2">
-      <div class="carousel-caption d-none d-md-block text-start">
+      <div class="carousel-caption text-start">
         <div class="col-md-6" style="margin-left: -75px;">
           <a class="text-center display-1" href="{% url 'transactions_index' %}">Realize easy Transactions</a>
         </div>
@@ -27,7 +28,7 @@
     </div>
     <div class="carousel-item">
       <img src="{% static 'img/img3.jpg' %}" class="d-block w-100" alt="Imagen 3">
-      <div class="carousel-caption d-none d-md-block text-start">
+      <div class="carousel-caption text-start">
         <div class="col-md-6" style="margin-left: -75px;">
           <a class="text-center display-1" href="{% url 'contact' %}">Know more About Us</a>
         </div>
