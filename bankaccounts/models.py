@@ -12,7 +12,7 @@ class BankAccount(models.Model):
     currency = models.CharField(max_length=3, choices=CURRENCY_CHOICES)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     bank = models.CharField(max_length=20, choices=BANK_CHOICES)
-    created_on = models.DateTimeField(default=datetime.now())
+    created_on = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
         return str(self.user) + "-" + self.currency + "-" + str(self.account_number)

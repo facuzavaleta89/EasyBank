@@ -21,15 +21,14 @@
           {% elif object.transactiontype == "Exchange" and bankaccount.currency == "USD" %}
           <ul style="color: red"><strong>USD: -${{ object.amount }}</strong></ul>
           <ul style="color: green"><strong>ARS: +${% widthratio object.amount 1 conversion %}</strong></ul>
+          <ul><strong>To:</strong> {{ object.user_participant_name }} ({{ object.account_participant_number }})</ul>
       
           {% elif object.transactiontype == "Exchange" and bankaccount.currency == "ARS" %}
           <ul style="color: red"><strong>ARS: -${{ object.amount }}</strong></ul>
           <ul style="color: green"><strong>USD: +${% widthratio object.amount conversion 1 %}</strong></ul>
+          <ul><strong>To:</strong> {{ object.user_participant_name }} ({{ object.account_participant_number }})</ul>
       
           {% elif object.transactiontype == "Transference" %}
-          <ul style="color: red"><strong>-${{ object.amount }}</strong></ul>
-          <ul><strong>To:</strong> {{ object.user_participant_name }} ({{ object.account_participant_number }})</ul>
-          {% elif object.transactiontype == "Exchange" %}
           <ul style="color: red"><strong>-${{ object.amount }}</strong></ul>
           <ul><strong>To:</strong> {{ object.user_participant_name }} ({{ object.account_participant_number }})</ul>
           {% endif %}

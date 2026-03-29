@@ -7,7 +7,7 @@ urlpatterns = [
     path("create/createsave/", views.bankaccounts_createsave, name="bankaccounts_createsave"),
     path("<str:account_number>/", views.bankaccounts_detail, name="bankaccounts_detail"),
     path("<str:account_number>/delete/", views.bankaccounts_delete, name="bankaccounts_delete"),
-    path("<str:account_number>/movements/", views.bankaccounts_movements, name="bankaccounts_delete"),
+    path("<str:account_number>/movements/", views.bankaccounts_movements, name="bankaccounts_movements"),
     path("<str:account_number>/delete/delete/", views.bankaccounts_deleteConfirmation, name="bankaccounts_deleteConfirmation"),
 
     
