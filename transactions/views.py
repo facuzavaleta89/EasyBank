@@ -349,13 +349,14 @@ def transactions_exchangesavedownloadPDF(request):
     p.drawString(50, 650, f"Currency: {receipt.account.currency}")
     p.drawString(50, 625, f"Amount: -${receipt.amount}")
     p.drawString(50, 600, f"Receiver: {receipt.accountReceiver.account_number}")
-    p.drawString(50, 575, f"Bank: {receipt.accountReceiver.bank}")
-    p.drawString(50, 550, f"Currency: {receipt.accountReceiver.currency}")    
-    p.drawString(50, 525, f"Date: {str(receipt.created_on)[:19]}")
-    p.drawString(50, 500, f"Balance Sender: ${receipt.account.balance}")
-    p.drawString(50, 475, f"Balance Receiver: ${receipt.accountReceiver.balance}")
+    p.drawString(50, 575, f"Receiver User: {receipt.accountReceiver.user.username}")
+    p.drawString(50, 550, f"Bank: {receipt.accountReceiver.bank}")
+    p.drawString(50, 525, f"Currency: {receipt.accountReceiver.currency}")    
+    p.drawString(50, 500, f"Date: {str(receipt.created_on)[:19]}")
+    p.drawString(50, 475, f"Balance Sender: ${receipt.account.balance}")
+    p.drawString(50, 450, f"Balance Receiver: ${receipt.accountReceiver.balance}")
 
-    p.line(18,450,580,450) 
+    p.line(18,425,580,425) 
 
 
     # Close the PDF object cleanly, and we're done.
@@ -465,11 +466,12 @@ def transactions_transferencesavedownloadPDF(request):
     p.drawString(50, 650, f"Currency: {receipt.account.currency}")
     p.drawString(50, 625, f"Amount: -${receipt.amount}")
     p.drawString(50, 600, f"Receiver: {receipt.accountReceiver.account_number}")
-    p.drawString(50, 575, f"Bank: {receipt.accountReceiver.bank}")
-    p.drawString(50, 550, f"Date: {str(receipt.created_on)[:19]}")
-    p.drawString(50, 525, f"Balance Sender: ${receipt.account.balance}")
+    p.drawString(50, 575, f"Receiver User: {receipt.user_participant_name}")
+    p.drawString(50, 550, f"Bank: {receipt.accountReceiver.bank}")
+    p.drawString(50, 525, f"Date: {str(receipt.created_on)[:19]}")
+    p.drawString(50, 500, f"Balance Sender: ${receipt.account.balance}")
 
-    p.line(18,500,580,500) 
+    p.line(18,475,580,475) 
 
 
     # Close the PDF object cleanly, and we're done.

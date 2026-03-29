@@ -28,6 +28,10 @@
       
           {% elif object.transactiontype == "Transference" %}
           <ul style="color: red"><strong>-${{ object.amount }}</strong></ul>
+          <ul><strong>To:</strong> {{ object.user_participant_name }} ({{ object.account_participant_number }})</ul>
+          {% elif object.transactiontype == "Exchange" %}
+          <ul style="color: red"><strong>-${{ object.amount }}</strong></ul>
+          <ul><strong>To:</strong> {{ object.user_participant_name }} ({{ object.account_participant_number }})</ul>
           {% endif %}
       
           <ul>{{ object.created_on }}</ul>
@@ -55,7 +59,11 @@ No user movements.
   
       {% elif object.transactiontype == "Transference" %}
       <ul style="color: green"><strong>+${{ object.amount }}</strong></ul>
-  
+      <ul><strong>From:</strong> {{ object.user_participant_name }} ({{ object.account_participant_number }})</ul>
+
+      {% elif object.transactiontype == "Exchange" %}
+      <ul style="color: green"><strong>+${{ object.amount }}</strong></ul>
+      <ul><strong>From:</strong> {{ object.user_participant_name }} ({{ object.account_participant_number }})</ul>
       {% endif %}
   
       <ul>{{ object.created_on }}</ul>
