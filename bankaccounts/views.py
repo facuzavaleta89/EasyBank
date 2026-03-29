@@ -53,8 +53,8 @@ def bankaccounts_detail(request, account_number):
 
 def bankaccounts_movements(request, account_number):
     bankaccount = BankAccount.objects.get(account_number=account_number)
-    historialObjects = HistorialObject.objects.filter(account=bankaccount).order_by("-created_on").values()
-    historialObjectsReceived = HistorialObjectReceived.objects.filter(account=bankaccount).order_by("-created_on").values()
+    historialObjects = HistorialObject.objects.filter(account=bankaccount).order_by("-created_on")
+    historialObjectsReceived = HistorialObjectReceived.objects.filter(account=bankaccount).order_by("-created_on")
     conversion = 300
     context = {
         'bankaccount': bankaccount,

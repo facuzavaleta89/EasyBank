@@ -27,6 +27,8 @@ class HistorialObject(models.Model):
     accountReceiver = models.ForeignKey(BankAccount, on_delete=models.CASCADE, related_name="accountReceiver", null=True)
     amount = models.DecimalField(max_digits=12, decimal_places=2)
     transactiontype = models.CharField(max_length=12, choices=TYPE_CHOICES)
+    account_participant_number = models.CharField(max_length=50, null=True, blank=True)
+    user_participant_name = models.CharField(max_length=100, null=True, blank=True)
     created_on = models.DateTimeField(default=datetime.now())
 
 class HistorialObjectReceived(models.Model):
@@ -34,4 +36,6 @@ class HistorialObjectReceived(models.Model):
     accountSender = models.ForeignKey(BankAccount, on_delete=models.CASCADE, related_name="accountSender", null=True)
     amount = models.DecimalField(max_digits=12, decimal_places=2)
     transactiontype = models.CharField(max_length=12, choices=TYPE_CHOICES)
+    account_participant_number = models.CharField(max_length=50, null=True, blank=True)
+    user_participant_name = models.CharField(max_length=100, null=True, blank=True)
     created_on = models.DateTimeField(default=datetime.now())

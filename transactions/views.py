@@ -256,14 +256,18 @@ def transactions_exchangesave(request):
                 account = sender,
                 accountReceiver = receiver,
                 amount = amount,
-                transactiontype = "Exchange")
+                transactiontype = "Exchange",
+                account_participant_number = receiver.account_number,
+                user_participant_name = receiver.user.username)
             receipt.save()
 
             receiptReceiver = HistorialObjectReceived(
                 account = receiver,
                 accountSender = sender,
                 amount = converted,
-                transactiontype = "Exchange")
+                transactiontype = "Exchange",
+                account_participant_number = sender.account_number,
+                user_participant_name = sender.user.username)
             receiptReceiver.save()
 
             context = {
@@ -294,14 +298,18 @@ def transactions_exchangesave(request):
                 account = sender,
                 accountReceiver = receiver, 
                 amount = amount,
-                transactiontype = "Exchange")
+                transactiontype = "Exchange",
+                account_participant_number = receiver.account_number,
+                user_participant_name = receiver.user.username)
             receipt.save()
 
             receiptReceiver = HistorialObjectReceived(
                 account = receiver,
                 accountSender = sender,
                 amount = converted,
-                transactiontype = "Exchange")
+                transactiontype = "Exchange",
+                account_participant_number = sender.account_number,
+                user_participant_name = sender.user.username)
             receiptReceiver.save()
 
             context = {
@@ -406,14 +414,18 @@ def transactions_transferencesave(request):
                 account = sender,
                 accountReceiver = receiver, 
                 amount = amount,
-                transactiontype = "Transference")
+                transactiontype = "Transference",
+                account_participant_number = receiver.account_number,
+                user_participant_name = receiver.user.username)
             receipt.save()
 
             receiptReceiver = HistorialObjectReceived(
                 account = receiver,
                 accountSender = sender,
                 amount = amount,
-                transactiontype = "Transference")
+                transactiontype = "Transference",
+                account_participant_number = sender.account_number,
+                user_participant_name = sender.user.username)
             receiptReceiver.save()
 
             context = {
